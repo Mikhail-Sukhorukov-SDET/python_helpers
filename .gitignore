@@ -1,0 +1,6 @@
+.idea/
+.git/
+Pipfile
+Pipfile.lock
+some_example.py
+for_interview.py

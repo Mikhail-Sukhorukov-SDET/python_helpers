@@ -49,3 +49,13 @@ print(old_dict.keys())
 old_dict_keys = ["Mikhail", "Daria"]
 dict_i_want = {k: v for k, v in old_dict.items() if k in old_dict_keys}
 print("filtration by dict", dict_i_want)
+
+dict_ex = {1: 1,
+           "b": 2}
+dict_ac = {1: 1,
+           "b": 2}
+for i in dict_ex.keys():
+    print(dict_ex[i], dict_ac[i])
+    assert dict_ex[i] == dict_ac[i]
+
+
