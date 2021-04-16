@@ -12,6 +12,7 @@ items = dict_ex.items()
 print("keys", keys)
 print("values", values)
 print("items", items)
+
 """  чтобы получить элемент по ключу: """
 dict_ex = {"name": ["Mikhail", "Daria", "Dmitri"],
            "age": [23, 22, 22],
@@ -21,6 +22,7 @@ print("value by key", value)
 value = dict_ex.setdefault("sex", ["male", "female", "male"])  # То же, только с добавлением значения в словарь.
 print("added value", value)
 print("extended dict", dict_ex)
+
 """ Python позволяет создавать словари со значениями по умолчанию. """
 """ collections.defaultdict ничем не отличается от обычного словаря за исключением того, 
 что по умолчанию всегда вызывается функция, возвращающая значение: """
@@ -31,16 +33,19 @@ for i in range(5):
 print("default dict idk", dict_default_type)
 dict_default_lambda_1 = collections.defaultdict(lambda: 1)  # Создаёт словарь с дефолтным значением 1.
 print("default dict idk", dict_default_lambda_1)
+
 """ Также можно создавать словари из последовательностей пар ключ-значение или из двух последовательностей: """
 collection_new = [("Mikhail", 23), ("Daria", 22), ("Mark", 25), ("John", 26), ("Andrew", 30)]
 new_dict = dict(collection_new)
 print("new dict by collection", new_dict)
 new_dict = dict(zip(["name", "job", "age"], ["Mikhail", "QA Aut", 23]))
 print("new dict by two arguments", new_dict)
+
 """ Как и у Python списков, словари поддерживают операцию pop. Только удаление элемента происходит по ключу: """
 value = new_dict.pop("age")
 print("deleted value", value)
-print("cutted dict", new_dict)
+print("cut dict", new_dict)
+
 """ Смотрите, как красиво можно отфильтровать словарь по ключу: """
 collection_new = [("Mikhail", 23), ("Daria", 22), ("Mark", 25), ("John", 26), ("Andrew", 30)]
 old_dict = dict(collection_new)
