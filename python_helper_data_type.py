@@ -1,4 +1,5 @@
 """ Immutable """
+print("Immutable")
 a = (1, 2, 3)
 b = a
 b += (4, 5)
@@ -18,6 +19,7 @@ print(b, type(b))
 print(a, type(a))
 
 """ Mutable """
+print("Mutable")
 a = [1, 2, 3]
 b = a
 b += [4, 5]
