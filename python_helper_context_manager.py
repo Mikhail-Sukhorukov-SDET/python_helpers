@@ -27,7 +27,7 @@ class File(object):
         """ As I understand 'type' is type of Error """
         print("exit")
         self.file_obj.close()
-        if type is AttributeError:
+        if type is AttributeError:  # here handled AttributeError cause File class doesn't have a "wriite" attribute
             return True
 
 
