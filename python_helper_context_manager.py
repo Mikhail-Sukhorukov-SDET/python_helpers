@@ -5,11 +5,11 @@ with open('some_file.txt', 'w') as opened_file:
     opened_file.write('Hola!')
 
 "Under the hood"
-file = open('some_file.txt', 'w')
+opened_file = open('some_file.txt', 'w')
 try:
-    file.write('Hola!')
+    opened_file.write('Hola!')
 finally:
-    file.close()
+    opened_file.close()
 
 "As class"
 
