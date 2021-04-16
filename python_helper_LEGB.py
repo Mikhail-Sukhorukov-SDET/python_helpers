@@ -2,8 +2,9 @@ min  # builtin
 
 min = 43  # global
 
-
 print(globals())
+
+
 def f():
     min = 2
 
