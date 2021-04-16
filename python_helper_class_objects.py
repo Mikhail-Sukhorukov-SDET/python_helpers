@@ -5,7 +5,7 @@ class Student:
         self.age = age
 
     def __repr__(self):
-        return repr((self.name, self.grade, self.age))
+        return f"{self.name}, {self.grade}, {self.age}"
 
 
 student_objects = [
