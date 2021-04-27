@@ -78,3 +78,6 @@ print("%s, %s, why are you a gay?" % ("Hello", "Misha"))
 kek1 = {"x": 12, "y": 0}
 print("point x: %(x)2d, point y: %(y)d" % kek1)
 
+""" Count """
+name = "Helen"
+print("'e' in 'Helen'", name.lower().count("e"))
