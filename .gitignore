@@ -1,5 +1,6 @@
 .idea/
 .git/
+venv/
 Tasks/some_example.py
 Tasks/for_interview.py
 some_file.txt
