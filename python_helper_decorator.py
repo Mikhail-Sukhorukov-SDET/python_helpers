@@ -34,14 +34,13 @@ def flip(func):
 
 
 @flip
-def div(x, y, show=False):
+def div(x, y):
     res = x / y
-    if show:
-        print(res, end="\n\n")
     return res
 
 
-div(2, 4, show=True)
+print(div(2, 4), "decorated @flip")
+print(div.__wrapped__(2, 4), "__wrapped__ decorated @flip")
 
 
 def introduce_on_debug(func):
