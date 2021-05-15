@@ -66,3 +66,20 @@ print("Умножение 2 на 15 =", f_2(15))  # 30
 f_3 = multiply(3)
 print("Умножение 3 на 5 =", f_3(5))  # 15
 print("Умножение 3 на 15 =", f_3(15))  # 45
+
+
+def composition(f, g):
+    def inner(*args):
+        return f(g(*args))
+
+    return inner
+
+
+h = composition(lambda x: x ** 2, lambda x: x + 1)
+print(h(5))
+
+h = composition(lambda x: x, composition(lambda x: x**2, lambda x: x + 1))
+print(h(5))
+
+h = composition(sum, lambda x, y, z: (x**2, y**3, z**4))
+print(h(2, 3, 9))
