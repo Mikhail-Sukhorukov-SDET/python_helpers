@@ -3,9 +3,9 @@ import functools
 
 
 def trace(func):
+    # этот декоратор позволяет возвращать имя и документацию декорируемой функции
     @functools.wraps(func)
     def inner(*args, **kwargs):
-        print(func.__name__, func.__doc__, args, kwargs)
         return func(*args, **kwargs)
 
     return inner
@@ -14,9 +14,9 @@ def trace(func):
 @trace
 def jopa_maker(something):
     """I return a jopa"""
-    return print("jopa")
+    return print(f"jopa, {something}")
 
 
-# help(jopa_maker)
+help(jopa_maker)
 list_ex = list(range(10))
 jopa_maker(list_ex)
