@@ -145,4 +145,29 @@ print(sum_of_two(4, 2), '\n')
 print(sum_of_two(5, 0), '\n')
 print(sum_of_two(5, 0), '\n')
 
-print(sum_of_two(4, 2))
+print(sum_of_two(4, 2), '\n\n')
+
+
+def decorator(new_decorator):
+    def res_decorator(func):
+
+        @functools.wraps(func)
+        def new_func(*args, **kwargs):
+            return new_decorator(func, *args, **kwargs)
+        return new_func
+
+    return res_decorator
+
+
+@decorator
+def introduce(f, *args, **kwargs):
+    print(f.__name__)
+    return f(*args, **kwargs)
+
+
+@introduce
+def identity4(x):
+    return x
+
+
+print(identity4(31415))
