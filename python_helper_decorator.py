@@ -121,18 +121,12 @@ def memoized(maxsize=None):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             key = (args, tuple(sorted(kwargs.items())))
-            if not maxsize or len(memory) < maxsize:
-                if key not in memory:
-                    memory[key] = func(*args, **kwargs)
-                return memory[key]
-            else:
-                if key not in memory:
+            if key not in memory:
+                if len(memory) == maxsize:
                     memory.popitem()
-                    memory[key] = func(*args, **kwargs)
-                return memory[key]
-
+                memory[key] = func(*args, **kwargs)
+            return memory[key]
         return wrapper
-
     return inner
 
 
