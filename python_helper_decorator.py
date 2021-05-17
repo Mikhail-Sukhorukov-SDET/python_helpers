@@ -126,7 +126,9 @@ def memoized(maxsize=None):
                     memory.popitem()
                 memory[key] = func(*args, **kwargs)
             return memory[key]
+
         return wrapper
+
     return inner
 
 
@@ -150,10 +152,10 @@ print(sum_of_two(4, 2), '\n\n')
 
 def decorator(new_decorator):
     def res_decorator(func):
-
         @functools.wraps(func)
         def new_func(*args, **kwargs):
             return new_decorator(func, *args, **kwargs)
+
         return new_func
 
     return res_decorator
@@ -170,4 +172,35 @@ def identity4(x):
     return x
 
 
-print(identity4(31415))
+print(identity4(31415), "\n\n")
+
+from functools import partial
+
+con_class = partial(range, 0, 101)
+
+for num in con_class(10):
+    print(num)
+
+print("\n\n")
+
+
+from functools import wraps, partial
+
+
+def bucket(func=None, **b_kwargs):
+    if not func:
+        return partial(bucket, **b_kwargs)
+
+    @wraps(func)
+    def inner(*args, **kwargs):
+        print(b_kwargs)
+        return func(*args, **kwargs)
+    return inner
+
+
+@bucket(two=2, three=3)
+def identity(x):
+    return x
+
+
+print(identity(42))
