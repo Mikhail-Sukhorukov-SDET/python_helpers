@@ -204,3 +204,17 @@ def identity(x):
 
 
 print(identity(42))
+
+
+def apply(*d_args, **d_kwargs):
+    def inner(func):
+        return func(*d_args, **d_kwargs)
+    return inner
+
+
+@apply(2, 3)
+def multiply(x, y):
+    return x * y
+
+
+print(multiply, type(multiply))
