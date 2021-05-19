@@ -46,7 +46,7 @@ print(div.__wrapped__(2, 4), "__wrapped__ decorated @flip")
 def introduce_on_debug(func):
     """
     Выводит имя функции если питон был вызван без флага -О:
-    python -O python_helper_decorator.py
+    python -O decorator.py
     """
 
     @functools.wraps(func)
