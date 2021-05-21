@@ -57,3 +57,11 @@ def count_of_int(file_name):
 
 
 print(count_of_int("Data/numbers.txt"))
+
+
+""" Revert file data """
+with open("Data/dataset_24465_4.txt") as file:
+    data = [line for line in file]
+with open("Data/dataset_24465_4_reverted.txt", "w") as reverted:
+    for line in data[::-1]:
+        reverted.write(line)
