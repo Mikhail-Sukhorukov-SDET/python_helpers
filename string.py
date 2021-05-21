@@ -52,7 +52,7 @@ print(".".join(filter(None, ["", "bar"])))
 
 """ startswith endwith """
 print(some_string.startswith("foo"))
-print(some_string.endswith(("foo")))
+print(some_string.endswith("foo"))
 
 abr = "abracadabra"
 """ find """
