@@ -22,32 +22,34 @@ look_for_a_file_by_full_name(path, file_name)
 
 """ All dirs with files that end with ".py" """
 
-list_of_dirs = set()
+
 # через рекурсивный обход функцией TODO: доработать
-"""
-def look_for_a_file_by_end(path, end):
+
+def look_for_a_file_by_end(path, end, dirs=None):
+    if dirs == None:
+        dirs = set()
     for name in os.listdir(path):
         sub_path = os.path.join(path, name)
         if name.endswith(end):
-            list_of_dirs.add(sub_path.replace(name, "").rstrip("\\").replace("\\", "/"))
-        elif os.path.isdir(sub_path):
-            look_for_a_file_by_end(sub_path, end)
-    return list_of_dirs
+            dirs.add(sub_path.replace(name, "").rstrip("\\").replace("\\", "/"))
+        if os.path.isdir(sub_path):
+            look_for_a_file_by_end(sub_path, end, dirs)
+    return dirs
 
 os.chdir("C:\\Users\\hrumq\\PycharmProjects\\PythonHelpers\\Tasks\\Data")
 with open("ans.txt", "w") as ans:
     [ans.write(f"{dir}\n") for dir in sorted(look_for_a_file_by_end("main", ".py"))]
-"""
+
 
 # через os.walk
+dirs_with_py = set()
 os.chdir("C:\\Users\\hrumq\\PycharmProjects\\PythonHelpers\\Tasks\\Data")
-[list_of_dirs.add(current_dir.replace("\\", "/")) for current_dir, dirs, files in os.walk("main") for file in files if file.endswith(".py")]
-"""
+[dirs_with_py.add(current_dir.replace("\\", "/")) for current_dir, dirs, files in os.walk("main") for file in files if file.endswith(".py")]
+
 for current_dir, dirs, files in os.walk("main"):
     for file in files:
         if file.endswith(".py"):
-            list_of_dirs.add(current_dir.replace("\\", "/"))
-"""
+            dirs_with_py.add(current_dir.replace("\\", "/"))
 
 with open("ans.txt", "w") as ans:
-    [ans.write(f"{dir}\n") for dir in sorted(list_of_dirs)]
+    [ans.write(f"{dir}\n") for dir in sorted(dirs_with_py)]
