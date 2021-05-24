@@ -1,4 +1,4 @@
-import re, requests
+import re
 
 """
 https://docs.python.org/3.5/library/re.html
