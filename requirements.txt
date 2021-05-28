@@ -1,2 +1,3 @@
 simple-crypt
 pycryptodome
+requests
