@@ -26,12 +26,12 @@ print("extended dict", dict_ex)
 """ Python позволяет создавать словари со значениями по умолчанию. """
 """ collections.defaultdict ничем не отличается от обычного словаря за исключением того, 
 что по умолчанию всегда вызывается функция, возвращающая значение: """
-dict_default_type = collections_ex.defaultdict(list)  # Создаёт словарь с дефолтным значением type.
+dict_default_type = collections.defaultdict(list)  # Создаёт словарь с дефолтным значением type.
 print("default dict idk", dict_default_type)
 for i in range(5):
     dict_default_type[i].append(i)
 print("default dict idk", dict_default_type)
-dict_default_lambda_1 = collections_ex.defaultdict(lambda: 1)  # Создаёт словарь с дефолтным значением 1.
+dict_default_lambda_1 = collections.defaultdict(lambda: 1)  # Создаёт словарь с дефолтным значением 1.
 print("default dict idk", dict_default_lambda_1)
 
 """ Также можно создавать словари из последовательностей пар ключ-значение или из двух последовательностей: """

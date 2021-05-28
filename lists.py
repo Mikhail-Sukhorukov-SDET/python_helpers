@@ -79,7 +79,7 @@ print("clear", list_insert)
 
 """ collections.Counter - вид словаря, который позволяет нам считать количество неизменяемых объектов 
 (в большинстве случаев, строк). Пример: """
-c = collections_ex.Counter()
+c = collections.Counter()
 for word in ['spam', 'egg', 'spam', 'counter', 'counter', 'counter']:
     c[word] += 1
 print(c)
