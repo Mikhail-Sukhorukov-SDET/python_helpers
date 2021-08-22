@@ -2,3 +2,5 @@ simple-crypt
 pycryptodome
 requests
 pytest
+numpy
+pandas
