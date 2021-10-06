@@ -1,4 +1,4 @@
-def caesar_cipher(row, step, lang='ru', cipher=True):
+def caesar_cipher(row: str, step: int, lang='ru', cipher=True):
     result_row = ''
     for symbol in row:
         if symbol.isalpha():
