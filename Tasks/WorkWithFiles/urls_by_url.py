@@ -4,4 +4,3 @@ urls = {item[6] for item in re.findall(pattern, requests.get("http://pastebin.co
 with open("Data/assertion.txt") as assertion:
      assertion_list = assertion.read().split()
 assert len(assertion_list) == (len(sorted(urls))), f"{len(assertion_list)} {len(sorted(urls))}"
-print(True)
