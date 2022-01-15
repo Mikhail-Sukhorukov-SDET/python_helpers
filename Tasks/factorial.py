@@ -1,20 +1,20 @@
-def factorial(n):
-    fact = 1
+def factorial_for(n):
+    fct = 1
     for i in range(1, n + 1):
-        fact *= i
-    return fact
+        fct *= i
+    return fct
 
 
-print(factorial(5))
+print(factorial_for(5))
 
 
 def trailing_zeros(n: int) -> int:
-    n = factorial(n)
+    n = factorial_for(n)
     last_number, counter = 0, 0
-    while last_number == 0:
+    while not last_number:
         last_number = n % 10
         n //= 10
-        if last_number == 0:
+        if not last_number:
             counter += 1
     return counter
 
@@ -22,10 +22,10 @@ def trailing_zeros(n: int) -> int:
 print(trailing_zeros(20))
 
 
-def fact(n):
+def factorial_recursive(n):
     if n == 1:
         return 1
-    return fact(n - 1) * n
+    return factorial_recursive(n - 1) * n
 
 
-print(fact(4))
+print(factorial_recursive(4))
