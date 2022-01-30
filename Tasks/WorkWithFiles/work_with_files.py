@@ -1,6 +1,4 @@
 import json
-import os
-import os.path
 
 
 def the_best_manager(file_name):
@@ -65,6 +63,5 @@ print(count_of_int("Data/numbers.txt"))
 with open("Data/file_to_reverse.txt") as file, open("Data/reversed_file.txt", "w") as reversed:
     for line in file.readlines()[::-1]:
         reversed.write(line)
-
 
 
