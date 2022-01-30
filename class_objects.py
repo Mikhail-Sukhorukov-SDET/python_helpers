@@ -13,5 +13,4 @@ student_objects = [
     Student('jane', 'B', 12),
     Student('dave', 'B', 10),
 ]
-print(sorted(student_objects, key=lambda student: student.age))  # sort by age
-# [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+print(sorted(student_objects, key=lambda student: student.age))
