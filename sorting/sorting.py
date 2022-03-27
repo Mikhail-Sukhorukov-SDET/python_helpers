@@ -1,4 +1,4 @@
-from utils import get_min
+from utils.utils import get_min
 
 
 def bubble_sorting(random_list: list) -> list:
