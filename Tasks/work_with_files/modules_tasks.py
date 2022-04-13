@@ -9,8 +9,8 @@ print(d.year, d.month, d.day)
 
 import simplecrypt
 
-ENCRYPTED_FILE = "Data/encrypted.bin"
-PASSWORDS_FILE = "Data/passwords.txt"
+ENCRYPTED_FILE = "data/encrypted.bin"
+PASSWORDS_FILE = "data/passwords.txt"
 with open(ENCRYPTED_FILE, "rb") as inp:
     encrypted = inp.read()
 

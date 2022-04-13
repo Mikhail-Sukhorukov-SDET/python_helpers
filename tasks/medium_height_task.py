@@ -1,5 +1,5 @@
 m = {}
-with open("Tasks/dataset_3380_5.txt") as file:
+with open("tasks/dataset_3380_5.txt") as file:
     for row in file:
         row = row.split()
         class_key = int(row[0])

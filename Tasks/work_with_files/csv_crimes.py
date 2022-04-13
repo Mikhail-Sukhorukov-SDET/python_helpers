@@ -2,7 +2,7 @@ import csv
 import collections
 
 
-with open("Data/Crimes.csv") as crimes:
+with open("data/Crimes.csv") as crimes:
     crimes_2015 = {}
     for row in csv.DictReader(crimes, delimiter=','):
         if "2015" in row["Date"]:

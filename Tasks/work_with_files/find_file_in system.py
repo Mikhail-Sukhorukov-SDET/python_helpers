@@ -37,13 +37,13 @@ def look_for_a_file_by_end(path, end, dirs=None):
     return dirs
 
 
-os.chdir("\\Tasks\\WorkWithFiles\\Data")
+os.chdir("\\tasks\\work_with_files\\data")
 with open("ans.txt", "w") as ans:
     [ans.write(f"{dir}\n") for dir in sorted(look_for_a_file_by_end("main", ".py"))]
 
 # через os.walk
 dirs_with_py = set()
-os.chdir("\\Tasks\\WorkWithFiles\\Data")
+os.chdir("\\tasks\\work_with_files\\data")
 [dirs_with_py.add(current_dir.replace("\\", "/")) for current_dir, dirs, files in os.walk("main") for file in files if
  file.endswith(".py")]
 

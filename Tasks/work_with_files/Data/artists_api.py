@@ -13,8 +13,8 @@ r = requests.post("https://api.artsy.net/api/tokens/xapp_token",
 
 headers = {"X-Xapp-Token": json.loads(r.text)["token"]}
 
-with open("Data/artists_data.txt", encoding="UTF-8") as data, \
-        open("Data/artists_names.txt", "w", encoding="UTF-8") as names:
+with open("data/artists_data.txt", encoding="UTF-8") as data, \
+        open("data/artists_names.txt", "w", encoding="UTF-8") as names:
     artists = []
     for i in data:
         r = requests.get(f"https://api.artsy.net/api/artists/{i[:-1]}", headers=headers)

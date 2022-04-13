@@ -13,7 +13,7 @@ def the_best_manager(file_name):
         return sorted(res.items(), key=lambda value: value[1])[-1]
 
 
-print(the_best_manager("Data/manager_sales.json"))
+print(the_best_manager("data/manager_sales.json"))
 
 
 def group_people(file_name):
@@ -33,7 +33,7 @@ def group_people(file_name):
         return id, max_count
 
 
-print(group_people("Data/group_people.json"))
+print(group_people("data/group_people.json"))
 
 
 """
@@ -56,11 +56,11 @@ def count_of_int(file_name):
         return count_three, sum_two
 
 
-print(count_of_int("Data/numbers.txt"))
+print(count_of_int("data/numbers.txt"))
 
 
 """ Reverse file data """
-with open("Data/file_to_reverse.txt") as file, open("Data/reversed_file.txt", "w") as reversed:
+with open("data/file_to_reverse.txt") as file, open("data/reversed_file.txt", "w") as reversed:
     for line in file.readlines()[::-1]:
         reversed.write(line)
 

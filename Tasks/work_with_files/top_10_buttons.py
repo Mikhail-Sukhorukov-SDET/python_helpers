@@ -1,5 +1,5 @@
 import csv
-FILE = "Data/tipichnaya_zadacha_analitika.csv"
+FILE = "data/tipichnaya_zadacha_analitika.csv"
 
 
 def get_unique_actions_for_each_user(document, place_action: tuple):
